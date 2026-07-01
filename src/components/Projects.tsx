@@ -4,17 +4,23 @@ import { useTranslation } from "../context/LanguageContext";
 import { useAudio } from "../context/AudioContext";
 import { ArrowUpRight, Github, Code, ExternalLink } from "lucide-react";
 
+// 1. Importações das imagens (O Vite vai rastrear isso para a Vercel)
+import imgP1 from "../assets/images/regenerated_image_1782867978425.png";
+import imgP2 from "../assets/images/regenerated_image_1782849692262.png";
+import imgP3 from "../assets/images/regenerated_image_1782850817567.png";
+import imgP4 from "../assets/images/regenerated_image_1782850286523.png";
+
 export const Projects: React.FC = () => {
   const { t } = useTranslation();
   const { playHover, playClick, playSuccess } = useAudio();
   const [filter, setFilter] = useState<"all" | "frontend" | "fullstack">("all");
 
-  // Project photos from curated high-quality modern tech Unsplash assets
+  // 2. Uso das variáveis importadas no lugar das strings de texto
   const projectPhotos: Record<string, string> = {
-    p1: "/src/assets/images/regenerated_image_1782867978425.png", // logistics graph analytics
-    p2: "/src/assets/images/regenerated_image_1782849692262.png", // premium coding landing page
-    p3: "/src/assets/images/regenerated_image_1782850817567.png", // dark streaming engine
-    p4: "/src/assets/images/regenerated_image_1782850286523.png", // cloud supabase explorer
+    p1: imgP1, // logistics graph analytics
+    p2: imgP2, // premium coding landing page
+    p3: imgP3, // dark streaming engine
+    p4: imgP4, // cloud supabase explorer
   };
 
   // Assign internal categories for filtering
